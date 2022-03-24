@@ -36,13 +36,14 @@ const employee = new Vue({
 		e_Address: '', 
 		e_Company: '', 
 		e_Email: '', 
-		e_Phone: '', 
-		error: false
+		e_Phone: '',
+		errors: []
 	},
 	methods: {
 		addEmployee: function(){
-			if(!this.e_Name || !this.e_DOB || !this.e_Address || !this.e_Company || !this.e_Email || !this.e_Phone){
-				this.error = true;
+			if(!this.e_Name || !this.e_DOB || !this.e_Address || !this.e_Email || !this.e_Phone){
+				//this.errors = [];
+				checkForm();
 			}else{
 				this.employeeList.push({
 				  Name: this.e_Name,
@@ -58,8 +59,29 @@ const employee = new Vue({
 				this.e_Company = '';
 				this.e_Email = '';
 				this.e_Phone = '';
-				this.error = false;
+				this.errors = [];
 			}
+		},
+		checkForm: function (e) {
+			this.errors = [];
+			
+			if (!this.e_Name) {
+				this.errors.push('Name required.');
+			}
+			if (!this.e_DOB) {
+				this.errors.push('DOB required.');
+			}
+			if (!this.e_Address) {
+				this.errors.push('Address required.');
+			}
+			if (!this.e_Email) {
+				this.errors.push('Email required.');
+			}
+			if (!this.e_Phone) {
+				this.errors.push('Phone Number required.');
+			}
+
+			e.preventDefault();
 		}
 	}
 });
