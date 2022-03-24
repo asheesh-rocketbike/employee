@@ -11,6 +11,18 @@
 <body>
 	<div class="container" id="employee">
 		<h1>{{ title }}</h1>
+		
+		<form
+		  @submit="checkForm"
+		  action=""
+		  method="post"
+		>
+		<p v-if="errors.length">
+			<b>Please correct the following error(s):</b>
+			<ul>
+			  <li v-for="error in errors">{{ error }}</li>
+			</ul>
+		</p>
 		<div class="employee_form">
 			<label for="name">Name
 				<input type="text" class="input-field" id="name" v-model="e_Name" required>
@@ -18,7 +30,6 @@
 			<label for="name">DOB
 				<input type="text" class="input-field" id="dob" v-model="e_DOB" required>
 			</label>
-			
 			<label for="name">Current Address
 				<input type="text" class="input-field" id="address" v-model="e_Address" required>
 			</label>
@@ -31,12 +42,9 @@
 			<label for="name">Phone
 				<input type="tel" class="input-field" id="p_number" v-model="e_Phone" required>
 			</label>
-			<button class="e_submit" v-on:click="addEmployee">Add Employee</button>
+			<input class="e_submit" v-on:click="addEmployee" type="submit" value="Add Employee">
 		</div>
-		
-		<div class="error_msg" v-show="error">
-			<p>Please fill all fields.</p>
-		</div>
+		</form>
 		
 		<div class="employee_outer" >
 			<ul>
