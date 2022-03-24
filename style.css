@@ -167,5 +167,15 @@ button {
     box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
     will-change: transform;
     vertical-align: top;
+	position:relative;
+}
+
+.delete-employee {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    opacity: .4;
+    transition: all 0.5s ease;
 }
   
