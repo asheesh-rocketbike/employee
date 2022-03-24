@@ -29,7 +29,7 @@ const employeeInfo = [
 const employee = new Vue({
 	el: "#employee",
 	data: {
-		title: 'Employee Detail',
+		title: 'Add/Delete Employee',
 		employeeList: employeeInfo,
 		e_Name: '',
 		e_DOB: '', 
