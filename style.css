@@ -150,12 +150,12 @@ button {
 }
 .employee_box {
     display: inline-block;
-    width: 29%;
+    width: 27%;
     height: 190px;
     padding: 20px;
     background-color: #51aae5;
     border-radius: 7px;
-    margin: 5px;
+    margin: 15px;
     line-height: 27px;
     cursor: pointer;
     position: relative;
@@ -168,6 +168,9 @@ button {
     will-change: transform;
     vertical-align: top;
 	position:relative;
+	list-style-type: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
 }
 
 .delete-employee {
@@ -179,3 +182,6 @@ button {
     transition: all 0.5s ease;
 }
   
+.employee_box:hover {
+    transform: scale(1.1);
+}
