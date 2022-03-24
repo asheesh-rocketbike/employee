@@ -41,8 +41,9 @@
 		<div class="employee_outer" >
 			<ul>
 				<li class="employee_box" 
-				v-for="employee in employeeList"
+				v-for="(employee, index) in employeeList"
 				>
+					<span v-on:click="employeeList.splice(index,1)" class="delete-employee">X</span>
 					<p>
 						<strong>Name:</strong> {{ employee.Name }}<br>
 						<strong>DOB:</strong> {{ employee.DOB }}<br>
